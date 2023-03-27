@@ -32,10 +32,19 @@ function btnConfirmClick(){
 
     btn.forEach(element => {
         if(element.classList.contains("actived")){
-            let btnValue = element.value;
+            let valorFixo = element.value;
 
-            if(entrada < btnValue){
-                error.innerText = 'Fichas insuficientes';
+            if(entrada < valorFixo){
+                error.innerText = 'Número de fichas é inferior ao número pedido';
+                error.removeAttribute('hidden');
+
+                document.getElementById('entrada').value = '';
+                
+                return;
+            }
+
+            else if(entrada > valorFixo){
+                error.innerText = 'Número de fichas é superior ao número pedido';
                 error.removeAttribute('hidden');
 
                 document.getElementById('entrada').value = '';
