@@ -57,13 +57,13 @@ function btnConfirmClick(){
             var elementId = element.getAttribute('id');
 
             setTimeout(function(){
-                TransitionState(elementId);
+                TransitionState(elementId, entrada);
             }, 1500);
         }
     });    
 }
 
-function TransitionState(state){
+function TransitionState(state, entrada){
     
     var state0 = document.getElementById('state0');
     
@@ -73,8 +73,28 @@ function TransitionState(state){
         var stateDiv = document.getElementById('state'+state[state.length-1]);
         stateDiv.classList.add('buttonStateAtual');
 
+
         imgMaquina.style.opacity = 0;
-        imgMaquina.src = './img/baixoMaquina.jpg';
+
+        if (entrada==1){
+            imgMaquina.src = './img/maquina-coca.jpeg';
+        }
+        else if (entrada==2){
+            imgMaquina.src = './img/maquina-fanta.jpeg';
+        }
+        else if (entrada==3){
+            imgMaquina.src = './img/maquina-guarana.jpeg';
+        }
+        else if (entrada==4){
+            imgMaquina.src = './img/maquina-sprite.jpeg';
+        }
+        else if (entrada==5){
+            imgMaquina.src = './img/maquina-pepsi.jpeg';
+        }
+        else if (entrada==6){
+            imgMaquina.src = './img/maquina-sukita.jpeg';
+        }
+        
         
         setTimeout(function(){
             stateDiv.classList.remove('buttonStateAtual');
@@ -88,7 +108,7 @@ function TransitionState(state){
 
             setTimeout(function(){ 
                 state0.classList.add("buttonStateAtual")
-                imgMaquina.src = './img/cimaMaquina.jpg';
+                imgMaquina.src = './img/maquina-nova.jpeg';
                 imgMaquina.style.opacity = 1;
                 
                 stateDiv.classList.remove('activedState');
