@@ -292,10 +292,10 @@ button:disabled:hover{
     height: 50px;
     padding: 10px;
     border-radius: 50%;
-    background-color: var(--terciary-color);
+    background-color: var(--main-color);
+    color: var(--second-color);
     outline: none;
     border-style: none;
-    color: var(--main-color);
     border-style: solid;
     border-color: #f0d535;
 }
@@ -321,6 +321,8 @@ button:disabled:hover{
 }
 
 .activedState{
+    background-color: var(--main-color);
+    color: var(--second-color);
     border-style: double;
     border-color: yellow;
     border-width: 10px;
