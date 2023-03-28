@@ -78,21 +78,27 @@ function TransitionState(state, entrada){
 
         if (entrada==1){
             imgMaquina.src = './img/maquina-coca.jpeg';
+            descricao(1);
         }
         else if (entrada==2){
             imgMaquina.src = './img/maquina-fanta.jpeg';
+            descricao(2);
         }
         else if (entrada==3){
             imgMaquina.src = './img/maquina-guarana.jpeg';
+            descricao(3);
         }
         else if (entrada==4){
             imgMaquina.src = './img/maquina-sprite.jpeg';
+            descricao(4);
         }
         else if (entrada==5){
             imgMaquina.src = './img/maquina-pepsi.jpeg';
+            descricao(5);
         }
         else if (entrada==6){
             imgMaquina.src = './img/maquina-sukita.jpeg';
+            descricao(6);
         }
         
         
@@ -100,6 +106,7 @@ function TransitionState(state, entrada){
             stateDiv.classList.remove('buttonStateAtual');
             
             stateDiv = document.getElementById('state7');
+            descricao(7);
             
             stateDiv.classList.remove('state7');
             stateDiv.classList.add('activedState');
@@ -108,6 +115,7 @@ function TransitionState(state, entrada){
 
             setTimeout(function(){ 
                 state0.classList.add("buttonStateAtual")
+                descricao(0);
                 imgMaquina.src = './img/maquina-nova.jpeg';
                 imgMaquina.style.opacity = 1;
                 
@@ -149,6 +157,9 @@ function descricao(val) {
             break
         case 7:
             descricaoElemento.innerHTML = 'Estado q7: Entregando o refrigerante...'
-            break       
+            break
+        default:
+            descricaoElemento.innerHTML = 'Estado q0: Esperando ação do cliente...'
+            break
     }
 }
