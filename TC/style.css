@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,600&family=Roboto:wght@400;500;700;900&display=swap');
 .actived {
     --terciary-color: #f0d535;
     --main-color: #1b1f22;
-
 }
 
 .circle {
@@ -25,6 +25,7 @@
     --main-color: #ad9511;
         
 }
+
 :root {
     --main-color: white;
     --second-color:#2E323B;
@@ -46,10 +47,11 @@ p {
 }
 
 body {
-    background-color: var(--second-color);
+    background-color: #24323D;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
 }
 
 input[type=number]::-webkit-inner-spin-button { 
@@ -65,7 +67,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--terciary-color);
+    background-color: #b63d3d;
     height: 10vh;
 }
 header>h1 {
@@ -137,7 +139,7 @@ color: #8d0000;
     width: 30%;
     min-height: 550px;
     margin: 20px;
-    background-color: rgba(204, 204, 204, 0.1);
+    background-color: #33464D;
     border-radius: 4px;
 }
 .asideLeft>input {
@@ -239,15 +241,16 @@ button:disabled:hover{
     width: 70%;
     padding: 15px;
     margin: 10px;
-    background-color: rgba(204, 204, 204, 0.1);
+    background-color:#33464D;
     border-radius: 4px;
 }
 .boxImg {
+    margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width:200px;
-    height:270px;
+    width:300px;
+    height:370px;
 }
 .boxImg > img {
     width: 100%;
@@ -260,12 +263,6 @@ button:disabled:hover{
     justify-content: center;
     align-items: center;
     margin: 10px;
-}
-.opcoes {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    list-style: none;
 }
 .containerRight{
     display: flex;
@@ -326,4 +323,16 @@ button:disabled:hover{
     border-style: double;
     border-color: yellow;
     border-width: 10px;
+}
+#inserirficha{
+    margin: 15px auto;
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    background-color: var(--terciary-color);
+    outline: none;
+    border-style: none;
+    border: 2px solid gray;
+    color: var(--main-color);
+    border-radius: 9999px;
 }
