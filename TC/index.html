@@ -13,14 +13,15 @@
         <h1 class="titulo"><strong>Máquina de Refrigerantes</strong></h1>
     </header>
     <main>
-        <aside class="asideLeft">
+        <div class="asideLeft">
+            <p>
+                Insira a ficha para liberar o refrigerante:
+            </p>
+            <button id="inserirficha" class="" onclick="btnC()">Inserir ficha</button>
                 <p>
                     <strong>
                         Clique em um dos botões referente ao<br>
                         refrigerante desejado.<br>
-                        <br>
-                        Em seguida, insira a quantidade de fichas<br>
-                        necessárias para obtê-lo.
                     </strong>
                 </p>
                 <ul class="ulCheckbox">
@@ -53,45 +54,18 @@
 
                     </li>
                 </ul>
-
-                <p>
-                    Insira as fichas para liberar o refrigerante:
-                </p>
-                <input type="number" name="" id="entrada">
                 <p hidden id="error"></p>
                 <button class="buttonConfirm" id="btnConfirm" onclick="btnConfirmClick()">Confirmar</button>
                 
-        </aside>
+            </div>
 
             
-        <aside class="asideRight">
+        <div class="asideRight">
 
             <div class="containerLeft">
                 <div class="boxImg">
                     <img id="imgMaquina" src="./img/maquina-nova.jpeg" alt="">
                 </div>
-                <ul class="opcoes">
-                    <li>
-                        <p>
-                            A - Coca-Cola (1 ficha)
-                        </p>
-                        <p>
-                            B - Fanta (2 fichas)
-                        </p>
-                        <p>
-                            C - Guaraná (3 fichas)
-                        </p>
-                        <p>
-                            D - Sprite (4 fichas)
-                        </p>
-                        <p>
-                            E - Pepsi (5 fichas)
-                        </p>
-                        <p>
-                            F - Sukita (6 fichas)
-                        </p>
-                    </li>
-                </ul>
             </div>
 
             <div class="containerRight">
@@ -115,7 +89,7 @@
                 </p>
             </div>
 
-        </aside>
+        </div>
     </main>
 
 </body>
