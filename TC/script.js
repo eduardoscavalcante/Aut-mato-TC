@@ -1,63 +1,42 @@
 function btnClick(e){
     const btn = document.querySelectorAll("button");
-    
+    const btn2 = document.getElementById("inserirficha");
     btn.forEach(element => {
-        if(element.classList.contains("actived") && element.id != e ){
+        if(element.classList.contains("actived") && element.id != e && element.id != btn2.id){
             element.classList.remove("actived");
         }
     });
     document.getElementById(e).classList.toggle("actived");
 }
 
+function btnC(){
+    const btn = document.getElementById("inserirficha");
+    btn.classList.add("actived");
+}
 function btnConfirmClick(){
     
     let imgMaquina = document.getElementById('imgMaquina');
 
-    let entrada = document.getElementById('entrada').value;
-
     var error = document.getElementById("error");
-
-    if(entrada == ''){
-
-        error.removeAttribute('hidden');
-        error.innerText = 'Nenhuma ficha inserida!';
-        return;
-    }
 
     error.setAttribute('hidden', true);
 
     const btn = document.querySelectorAll("button");
 
     let btnConfirm = document.getElementById("btnConfirm");
-
+    var inserirFicha = document.getElementById("inserirficha")
+    if(!inserirFicha.classList.contains("actived"))
+    {
+        return;
+    }
+    inserirFicha.classList.remove("actived");
     btn.forEach(element => {
         if(element.classList.contains("actived")){
-            let valorFixo = element.value;
-
-            if(entrada < valorFixo){
-                error.innerText = 'Número de fichas é inferior ao número pedido';
-                error.removeAttribute('hidden');
-
-                document.getElementById('entrada').value = '';
-                
-                return;
-            }
-
-            else if(entrada > valorFixo){
-                error.innerText = 'Número de fichas é superior ao número pedido';
-                error.removeAttribute('hidden');
-
-                document.getElementById('entrada').value = '';
-                
-                return;
-            }
-
             btnConfirm.setAttribute("disabled", 'true');
 
             var elementId = element.getAttribute('id');
-
             setTimeout(function(){
-                TransitionState(elementId, entrada);
+                TransitionState(elementId, element.value);
             }, 1500);
         }
     });    
@@ -110,8 +89,6 @@ function TransitionState(state, entrada){
             
             stateDiv.classList.remove('state7');
             stateDiv.classList.add('activedState');
-            
-            entrada.value = '';
 
             setTimeout(function(){ 
                 state0.classList.add("buttonStateAtual")
@@ -123,9 +100,8 @@ function TransitionState(state, entrada){
                 stateDiv.classList.add('state7');
                 document.getElementById(state).classList.remove('actived');
 
-                btnConfirm.removeAttribute('disabled')
-                
-            }, 5000);
+                btnConfirm.removeAttribute('disabled')               
+            }, 500);
         }, 2000);
     }, 2000);
 
